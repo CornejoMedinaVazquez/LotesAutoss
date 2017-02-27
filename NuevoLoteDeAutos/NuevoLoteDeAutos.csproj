@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{02D2877D-9F0D-4BA0-BCAC-13DE3504EA6E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NuevoLoteDeAutos</RootNamespace>
+    <AssemblyName>NuevoLoteDeAutos</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge.Video">
+      <HintPath>..\..\DLL\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="aforge.video.directshow">
+      <HintPath>..\..\DLL\aforge.video.directshow.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\OneDrive\Documentos\DLL\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.Entity.6.9.9\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySQLDriverCS">
+      <HintPath>..\..\DLL\MySQLDriverCS.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebCam_Capture, Version=1.0.2395.24959, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Downloads\WebCam_Capture.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controlador\ManejoSesion.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAgregarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAgregarCliente.Designer.cs">
+      <DependentUpon>FrmAgregarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAgregarPropietarioAuto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAgregarPropietarioAuto.Designer.cs">
+      <DependentUpon>FrmAgregarPropietarioAuto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAgregarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAgregarUsuario.Designer.cs">
+      <DependentUpon>FrmAgregarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCatalogoAutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCatalogoAutos.Designer.cs">
+      <DependentUpon>FrmCatalogoAutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCatalogoPropietario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCatalogoPropietario.Designer.cs">
+      <DependentUpon>FrmCatalogoPropietario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAgregaroRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAgregaroRol.Designer.cs">
+      <DependentUpon>FrmAgregaroRol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCatalogoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCatalogoUsuario.Designer.cs">
+      <DependentUpon>FrmCatalogoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCatalogoVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCatalogoVentas.Designer.cs">
+      <DependentUpon>FrmCatalogoVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCategoriaRoles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCategoriaRoles.Designer.cs">
+      <DependentUpon>FrmCategoriaRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmClientesVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmClientesVentas.Designer.cs">
+      <DependentUpon>FrmClientesVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCtalogoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCtalogoCliente.Designer.cs">
+      <DependentUpon>FrmCtalogoCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModifcarPermisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModifcarPermisos.Designer.cs">
+      <DependentUpon>FrmModifcarPermisos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModificarAuto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModificarAuto.Designer.cs">
+      <DependentUpon>FrmModificarAuto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModificarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModificarCliente.Designer.cs">
+      <DependentUpon>FrmModificarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModificarPropietario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModificarPropietario.Designer.cs">
+      <DependentUpon>FrmModificarPropietario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModificarRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModificarRol.Designer.cs">
+      <DependentUpon>FrmModificarRol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModificarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModificarUsuario.Designer.cs">
+      <DependentUpon>FrmModificarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPermisosNegados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPermisosNegados.Designer.cs">
+      <DependentUpon>FrmPermisosNegados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPermisosNegadosPorRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPermisosNegadosPorRol.Designer.cs">
+      <DependentUpon>FrmPermisosNegadosPorRol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FromVentasPropietarioAuto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FromVentasPropietarioAuto.Designer.cs">
+      <DependentUpon>FromVentasPropietarioAuto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\autos.cs" />
+    <Compile Include="Modelo\clientes.cs" />
+    <Compile Include="Modelo\DataModel.cs" />
+    <Compile Include="Modelo\permisos.cs" />
+    <Compile Include="Modelo\permisosnegadosrol.cs" />
+    <Compile Include="Modelo\propietarios.cs" />
+    <Compile Include="Modelo\roles.cs" />
+    <Compile Include="Modelo\usuarios.cs" />
+    <Compile Include="Modelo\ventas.cs" />
+    <Compile Include="Modelo\WebCam.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAgregarCliente.resx">
+      <DependentUpon>FrmAgregarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAgregarPropietarioAuto.resx">
+      <DependentUpon>FrmAgregarPropietarioAuto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAgregarUsuario.resx">
+      <DependentUpon>FrmAgregarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCatalogoAutos.resx">
+      <DependentUpon>FrmCatalogoAutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCatalogoPropietario.resx">
+      <DependentUpon>FrmCatalogoPropietario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAgregaroRol.resx">
+      <DependentUpon>FrmAgregaroRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCatalogoUsuario.resx">
+      <DependentUpon>FrmCatalogoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCatalogoVentas.resx">
+      <DependentUpon>FrmCatalogoVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCategoriaRoles.resx">
+      <DependentUpon>FrmCategoriaRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmClientesVentas.resx">
+      <DependentUpon>FrmClientesVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCtalogoCliente.resx">
+      <DependentUpon>FrmCtalogoCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModifcarPermisos.resx">
+      <DependentUpon>FrmModifcarPermisos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModificarAuto.resx">
+      <DependentUpon>FrmModificarAuto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModificarCliente.resx">
+      <DependentUpon>FrmModificarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModificarPropietario.resx">
+      <DependentUpon>FrmModificarPropietario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModificarRol.resx">
+      <DependentUpon>FrmModificarRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModificarUsuario.resx">
+      <DependentUpon>FrmModificarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPermisosNegados.resx">
+      <DependentUpon>FrmPermisosNegados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPermisosNegadosPorRol.resx">
+      <DependentUpon>FrmPermisosNegadosPorRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FromVentasPropietarioAuto.resx">
+      <DependentUpon>FromVentasPropietarioAuto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\findtheuser_search_search_theuser_4518.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
