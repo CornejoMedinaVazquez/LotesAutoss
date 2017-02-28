@@ -65,20 +65,20 @@ namespace NuevoLoteDeAutos
 
         private void dgvDatosAuto_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-                DataGridViewRow row = (DataGridViewRow)dgvDatosAuto.Rows[e.RowIndex];
-                FrmAgregarPropietarioAuto.DefInstance.pkauto1 = Convert.ToInt32(row.Cells["pkAuto"].Value);
-                FrmAgregarPropietarioAuto.DefInstance.modelo1 = row.Cells["sMarca"].Value.ToString();
-                FrmAgregarPropietarioAuto.DefInstance.anio = row.Cells["iAnio"].Value.ToString();
-                FrmAgregarPropietarioAuto.DefInstance.serie1 = row.Cells["iSerie"].Value.ToString();
-                FrmAgregarPropietarioAuto.DefInstance.precio1 = row.Cells["iPrecio"].Value.ToString();
-                FrmAgregarPropietarioAuto.DefInstance.nacionalidad1 = row.Cells["sNacionalidad"].Value.ToString();
-                FrmAgregarPropietarioAuto.DefInstance.color = row.Cells["sColor"].Value.ToString();
-                FrmAgregarPropietarioAuto.DefInstance.Show();
-                this.Close();
-            
 
            
+                DataGridViewRow row = (DataGridViewRow)dgvDatosAuto.Rows[e.RowIndex];
+                FrmAgregarCliente.DefInstance.pkAuto1 = Convert.ToInt32(row.Cells["pkAuto"].Value);
+                FrmAgregarCliente.DefInstance.modelo1 = row.Cells["sMarca"].Value.ToString();
+                FrmAgregarCliente.DefInstance.anio = row.Cells["iAnio"].Value.ToString();
+                FrmAgregarCliente.DefInstance.serie1 = row.Cells["iSerie"].Value.ToString();
+                FrmAgregarCliente.DefInstance.precio1 = row.Cells["iPrecio"].Value.ToString();
+                FrmAgregarCliente.DefInstance.nacionalidad1 = row.Cells["sNacionalidad"].Value.ToString();
+                FrmAgregarCliente.DefInstance.color = row.Cells["sColor"].Value.ToString();
+                FrmAgregarCliente.DefInstance.Show();
+                this.Close();
+           
+
         }
 
         private void FrmCatalogoAutos_Load(object sender, EventArgs e)
