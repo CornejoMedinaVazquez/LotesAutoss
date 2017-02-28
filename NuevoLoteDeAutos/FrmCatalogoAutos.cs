@@ -7,12 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NuevoLoteDeAutos.Controlador;
 using NuevoLoteDeAutos.Modelo;
 
 namespace NuevoLoteDeAutos
 {
+    
     public partial class FrmCatalogoAutos : Form
     {
+        
+
+      
+
+
         internal int clientes { get; set; }
         internal int propietarios { get; set; }
         clientes objcli = new clientes();
@@ -24,6 +31,8 @@ namespace NuevoLoteDeAutos
         }
         public FrmCatalogoAutos()
         {
+         
+
             InitializeComponent();
             dgvDatosAuto.AutoGenerateColumns = false;
         }
@@ -56,8 +65,7 @@ namespace NuevoLoteDeAutos
 
         private void dgvDatosAuto_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (FrmAgregarPropietarioAuto.autopropietario == 1)
-            {
+            
                 DataGridViewRow row = (DataGridViewRow)dgvDatosAuto.Rows[e.RowIndex];
                 FrmAgregarPropietarioAuto.DefInstance.pkauto1 = Convert.ToInt32(row.Cells["pkAuto"].Value);
                 FrmAgregarPropietarioAuto.DefInstance.modelo1 = row.Cells["sMarca"].Value.ToString();
@@ -68,27 +76,16 @@ namespace NuevoLoteDeAutos
                 FrmAgregarPropietarioAuto.DefInstance.color = row.Cells["sColor"].Value.ToString();
                 FrmAgregarPropietarioAuto.DefInstance.Show();
                 this.Close();
-            }
+            
 
-            else
-            {
-                DataGridViewRow row = (DataGridViewRow)dgvDatosAuto.Rows[e.RowIndex];
-                FrmAgregarCliente.DefInstance.pkAuto1 = Convert.ToInt32(row.Cells["pkAuto"].Value);
-                FrmAgregarCliente.DefInstance.modelo1 = row.Cells["sMarca"].Value.ToString();
-                FrmAgregarCliente.DefInstance.anio = row.Cells["iAnio"].Value.ToString();
-                FrmAgregarCliente.DefInstance.serie1 = row.Cells["iSerie"].Value.ToString();
-                FrmAgregarCliente.DefInstance.precio1 = row.Cells["iPrecio"].Value.ToString();
-                FrmAgregarCliente.DefInstance.nacionalidad1 = row.Cells["sNacionalidad"].Value.ToString();
-                FrmAgregarCliente.DefInstance.color = row.Cells["sColor"].Value.ToString();
-                FrmAgregarCliente.DefInstance.Show();
-                this.Close();
-            }
-
+           
         }
 
         private void FrmCatalogoAutos_Load(object sender, EventArgs e)
         {
+           
             cargardatos();
+           
         }
 
         private void btnEliminarAuto_Click(object sender, EventArgs e)
@@ -104,6 +101,22 @@ namespace NuevoLoteDeAutos
         private void chkStatus_CheckedChanged_1(object sender, EventArgs e)
         {
             this.cargardatos();
+        }
+
+
+
+        public void ProcesarPermisos()
+        {
+            int permisos = 0;
+
+            permisos = Convert.ToInt32(btnEliminarAuto.Tag);
+            btnEliminarAuto.Enabled = FrmMenu.SessionActiva.tienepermiso(permisos);
+
+        }
+
+        private void FrmCatalogoAutos_Activated(object sender, EventArgs e)
+        {
+            this.ProcesarPermisos();
         }
     }
 }

@@ -86,17 +86,16 @@ namespace NuevoLoteDeAutos.Controlador
 
     public enum enumPermisosActivos
     {
-        ADMINUSTRADOR_PROPIETARIOAUTO = 1,
-        ADMINUSTRADOR_COMPRADOR = 2,
-        ADMINUSTRADOR_VENDEDOR = 3,
-        //================================
-        VENDEDOR_PROPIETARIOAUTO = 4,
-        VENDEDOR_COMPRADOR = 5,
-        VENDEDOR_VENDEDOR = 6,
-        //===========================
-        GERENTE_PROPIETARIOAUTO = 7,
-        GERENTE_COMPRADOR = 8,
-        GERENTE_VENDEDOR = 9
+        PROPIETARIOYAUTO = 1,
+        CLIENTE = 2,
+        USUARIO = 3,
+        CATALOGOVENTAS = 4,
+        PERMISOSPORROL = 5,
+        ROL = 6,
+
+        btnEliminarAuto = 7
+      
+        
     }
 }
 

@@ -52,10 +52,12 @@
             // 
             // btnEliminarCatalogoCliente
             // 
+            this.btnEliminarCatalogoCliente.Enabled = false;
             this.btnEliminarCatalogoCliente.Location = new System.Drawing.Point(397, 291);
             this.btnEliminarCatalogoCliente.Name = "btnEliminarCatalogoCliente";
             this.btnEliminarCatalogoCliente.Size = new System.Drawing.Size(97, 39);
             this.btnEliminarCatalogoCliente.TabIndex = 12;
+            this.btnEliminarCatalogoCliente.Tag = "7";
             this.btnEliminarCatalogoCliente.Text = "Eliminar";
             this.btnEliminarCatalogoCliente.UseVisualStyleBackColor = true;
             this.btnEliminarCatalogoCliente.Click += new System.EventHandler(this.btnEliminarCatalogoCliente_Click);
@@ -137,6 +139,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmCtalogoCliente";
             this.Text = "Catalogo Cliente";
+            this.Activated += new System.EventHandler(this.FrmCtalogoCliente_Activated);
             this.Load += new System.EventHandler(this.FrmCtalogoCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCatalogoCliente)).EndInit();
             this.ResumeLayout(false);

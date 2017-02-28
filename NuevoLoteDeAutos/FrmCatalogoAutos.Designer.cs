@@ -59,11 +59,13 @@
             // 
             // btnEliminarAuto
             // 
+            this.btnEliminarAuto.Enabled = false;
             this.btnEliminarAuto.Location = new System.Drawing.Point(487, 348);
             this.btnEliminarAuto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEliminarAuto.Name = "btnEliminarAuto";
             this.btnEliminarAuto.Size = new System.Drawing.Size(112, 35);
             this.btnEliminarAuto.TabIndex = 10;
+            this.btnEliminarAuto.Tag = "7";
             this.btnEliminarAuto.Text = "Eliminar";
             this.btnEliminarAuto.UseVisualStyleBackColor = true;
             this.btnEliminarAuto.Click += new System.EventHandler(this.btnEliminarAuto_Click);
@@ -208,6 +210,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmCatalogoAutos";
             this.Text = "FrmCatalogoAutos";
+            this.Activated += new System.EventHandler(this.FrmCatalogoAutos_Activated);
             this.Load += new System.EventHandler(this.FrmCatalogoAutos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosAuto)).EndInit();
             this.ResumeLayout(false);

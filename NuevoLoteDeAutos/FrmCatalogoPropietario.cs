@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using NuevoLoteDeAutos.Controlador;//agrego
 using NuevoLoteDeAutos.Modelo;// agrego carpeta modelo
 
 namespace NuevoLoteDeAutos
@@ -15,7 +15,7 @@ namespace NuevoLoteDeAutos
     public partial class FrmCatalogoPropietario : Form
     {
         public static int propf;
-
+       
         public void cargardatos()
         {
             this.dgvDatosPropietario.DataSource = propietarios.BuscarPorNombreUsuario(
@@ -23,6 +23,7 @@ namespace NuevoLoteDeAutos
         }
         public FrmCatalogoPropietario()
         {
+            
             InitializeComponent();
             dgvDatosPropietario.AutoGenerateColumns = false;
         }
@@ -60,6 +61,8 @@ namespace NuevoLoteDeAutos
 
         private void FrmCatalogoPropietario_Load(object sender, EventArgs e)
         {
+
+          
             cargardatos();
         }
 
@@ -91,6 +94,20 @@ namespace NuevoLoteDeAutos
 
             FrmAgregarPropietarioAuto.DefInstance.Show();
             this.Close();
+        }
+
+        public void ProcesarPermisos()
+        {
+            int permisos = 0;
+
+            permisos = Convert.ToInt32(btnEliminar.Tag);
+            btnEliminar.Enabled = FrmMenu.SessionActiva.tienepermiso(permisos);
+
+        }
+
+        private void FrmCatalogoPropietario_Activated(object sender, EventArgs e)
+        {
+            this.ProcesarPermisos();
         }
     }
 }

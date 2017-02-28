@@ -33,11 +33,11 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.pkRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,6 +66,7 @@
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(121, 38);
             this.btnEliminar.TabIndex = 3;
+            this.btnEliminar.Tag = "8";
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -92,6 +93,26 @@
             this.dataGridView1.Size = new System.Drawing.Size(645, 188);
             this.dataGridView1.TabIndex = 0;
             // 
+            // pkRol
+            // 
+            this.pkRol.DataPropertyName = "pkRol";
+            this.pkRol.HeaderText = "Codigo";
+            this.pkRol.Name = "pkRol";
+            // 
+            // sNombre
+            // 
+            this.sNombre.DataPropertyName = "sNombre";
+            this.sNombre.HeaderText = "Nombre";
+            this.sNombre.Name = "sNombre";
+            this.sNombre.Width = 150;
+            // 
+            // sDescripcion
+            // 
+            this.sDescripcion.DataPropertyName = "sDescripcion";
+            this.sDescripcion.HeaderText = "Descripcion";
+            this.sDescripcion.Name = "sDescripcion";
+            this.sDescripcion.Width = 350;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -113,26 +134,6 @@
             this.checkBox1.Text = "status";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // pkRol
-            // 
-            this.pkRol.DataPropertyName = "pkRol";
-            this.pkRol.HeaderText = "Codigo";
-            this.pkRol.Name = "pkRol";
-            // 
-            // sNombre
-            // 
-            this.sNombre.DataPropertyName = "sNombre";
-            this.sNombre.HeaderText = "Nombre";
-            this.sNombre.Name = "sNombre";
-            this.sNombre.Width = 150;
-            // 
-            // sDescripcion
-            // 
-            this.sDescripcion.DataPropertyName = "sDescripcion";
-            this.sDescripcion.HeaderText = "Descripcion";
-            this.sDescripcion.Name = "sDescripcion";
-            this.sDescripcion.Width = 350;
             // 
             // FrmCategoriaRoles
             // 

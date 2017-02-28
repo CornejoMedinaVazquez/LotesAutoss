@@ -74,5 +74,18 @@ namespace NuevoLoteDeAutos
                 this.Close();
             }
         }
+        public void ProcesarPermisos()
+        {
+            int permisos = 0;
+
+            permisos = Convert.ToInt32(btnEliminarCatalogoCliente.Tag);
+            btnEliminarCatalogoCliente.Enabled = FrmMenu.SessionActiva.tienepermiso(permisos);
+
+        }
+
+        private void FrmCtalogoCliente_Activated(object sender, EventArgs e)
+        {
+            this.ProcesarPermisos();
+        }
     }
 }

@@ -8,13 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NuevoLoteDeAutos.Modelo;
+using NuevoLoteDeAutos.Controlador;
 
 namespace NuevoLoteDeAutos
 {
 
     public partial class FrmCategoriaRoles : Form
     {
+      
         public static int Rol;
+       
         public void cargardatos()
         {
             this.dataGridView1.DataSource = roles.BuscarPorNombreRo(
@@ -22,13 +25,14 @@ namespace NuevoLoteDeAutos
         }
         public FrmCategoriaRoles()
         {
+           
             InitializeComponent();
             dataGridView1.AutoGenerateColumns = false;
         }
 
         private void FrmCategoriaRoles_Load(object sender, EventArgs e)
         {
-            cargardatos();
+         
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)

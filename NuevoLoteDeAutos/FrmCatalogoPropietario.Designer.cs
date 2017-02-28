@@ -159,11 +159,13 @@
             // 
             // btnEliminar
             // 
+            this.btnEliminar.Enabled = false;
             this.btnEliminar.Location = new System.Drawing.Point(1068, 346);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(112, 35);
             this.btnEliminar.TabIndex = 4;
+            this.btnEliminar.Tag = "7";
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -206,7 +208,9 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmCatalogoPropietario";
+            this.Tag = "7";
             this.Text = "Catalogo Propietario";
+            this.Activated += new System.EventHandler(this.FrmCatalogoPropietario_Activated);
             this.Load += new System.EventHandler(this.FrmCatalogoPropietario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosPropietario)).EndInit();
             this.ResumeLayout(false);

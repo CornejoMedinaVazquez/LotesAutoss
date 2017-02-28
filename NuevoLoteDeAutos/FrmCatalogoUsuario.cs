@@ -8,13 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NuevoLoteDeAutos.Modelo;
+using NuevoLoteDeAutos.Controlador;
 
 namespace NuevoLoteDeAutos
 {
     public partial class FrmCatalogoUsuario : Form
     {
         public static int usuarioforeneo;
-    
+      
+
+       
         public void cargardatos()
         {
             this.dgvCatalogoUsuario.DataSource = usuarios.BuscarPorNombreUsuario(
@@ -23,6 +26,7 @@ namespace NuevoLoteDeAutos
 
         public FrmCatalogoUsuario()
         {
+            
             InitializeComponent();
             dgvCatalogoUsuario.AutoGenerateColumns = false;
         }
@@ -56,6 +60,7 @@ namespace NuevoLoteDeAutos
         private void FrmCatalogoUsuario_Load(object sender, EventArgs e)
         {
             cargardatos();
+
         }
 
         private void btncancelarCatalogoUsuario_Click(object sender, EventArgs e)
@@ -84,6 +89,20 @@ namespace NuevoLoteDeAutos
         {
             this.cargardatos();
             
+        }
+
+        public void ProcesarPermisos()
+        {
+            int permisos = 0;
+
+            permisos = Convert.ToInt32(btnEliminarCatalogoUsuario.Tag);
+            btnEliminarCatalogoUsuario.Enabled = FrmMenu.SessionActiva.tienepermiso(permisos);
+
+        }
+
+        private void FrmCatalogoUsuario_Activated(object sender, EventArgs e)
+        {
+            this.ProcesarPermisos();
         }
     }
 }
