@@ -16,14 +16,12 @@ namespace NuevoLoteDeAutos.Modelo
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public roles()
         {
+            this.bStatus = true;
             permisosnegadosrol = new HashSet<permisosnegadosrol>();
             usuarios = new HashSet<usuarios>();
 
-            this.bStatus = true;
+            
         }
-        
-        
-           
         
         [Key]
         public int pkRol { get; set; }

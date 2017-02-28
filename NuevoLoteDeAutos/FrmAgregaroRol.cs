@@ -42,5 +42,13 @@ namespace NuevoLoteDeAutos
             FrmCategoriaRoles f = new FrmCategoriaRoles();
             f.ShowDialog();
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Seguro que desea canselar?", "Aviso...!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+               this.Close();
+            }
+        }
     }
 }
